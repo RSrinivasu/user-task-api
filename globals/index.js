@@ -1,1 +1,1 @@
-global.mongo_db =""
+global.mongo_db =false

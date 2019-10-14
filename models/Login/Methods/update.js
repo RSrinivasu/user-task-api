@@ -3,7 +3,6 @@ module.exports = async function(_login){
         let login = mongo_db.collection("login")
         let { modifiedCount } = await login.updateOne({ clientId : this.user.clientId },{$set:{ ..._login}})
         
-        console.log("this is the user",modifiedCount)
         if(modifiedCount != 0){
             return modifiedCount
         }

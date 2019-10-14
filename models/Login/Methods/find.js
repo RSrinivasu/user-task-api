@@ -1,4 +1,5 @@
 module.exports = async(id)=>{
+    if(!mongo_db) throw Error("DB Connection")
     let login = mongo_db.collection("login")
     //login = await login.findOne({clientId: id})
     login = await login.aggregate([
