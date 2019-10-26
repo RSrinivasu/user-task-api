@@ -4,13 +4,14 @@ import bodyparser from 'body-parser'
 import cors from 'cors'
 import routes from './routes'
 import { MongoClient } from 'mongodb'
-
 import './globals'
 
 const app = express()
 app.use(bodyparser.urlencoded({extended:false}))
 app.use(bodyparser.json())
 app.use(cors())
+
+
 // app.use( (req, res, next) =>{
 //     res.header("Access-Control-Allow-Origin", "*");  
 //     // res.header("Access-Control-Allow-Headers", 'Origin, Content-Type, X-Auth-Token');

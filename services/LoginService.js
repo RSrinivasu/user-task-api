@@ -1,6 +1,5 @@
 import Login  from '../models/Login'
 import User from '../models/User'
-import { log } from 'util'
 
 function LoginService(user){
 }

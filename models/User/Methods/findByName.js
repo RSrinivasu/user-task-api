@@ -14,8 +14,9 @@ module.exports = async function(name){
         {
             $project: {
                 __v: 0,
-                "user.__v": 0,
-                "user._id": 0,
+                _id: 0,
+                createdTime:0,
+                updatedTime:0
             }
         },
         {
@@ -42,7 +43,6 @@ module.exports = async function(name){
             $project: {
                 __v: 0,
                 "friends.__v": 0,
-                "friends._id": 0,
             }
         },
         {
