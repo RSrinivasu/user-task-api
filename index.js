@@ -4,6 +4,7 @@ import bodyparser from 'body-parser'
 import cors from 'cors'
 import routes from './routes'
 import { MongoClient } from 'mongodb'
+import io from 'socket.io'
 import './globals'
 
 const app = express()
@@ -22,6 +23,7 @@ app.use(cors())
 app.use('/user-daily-task/v1/' ,routes)
 
 
+
 const URI = "mongodb+srv://srinu:12a21f0028@cluster0-0p13a.mongodb.net/user-task?retryWrites=true&w=majority"
 
 MongoClient.connect(URI, {
@@ -36,9 +38,10 @@ MongoClient.connect(URI, {
   
   mongo_db = database.db();
   // Start the application after the database connection is ready
-  app.listen(3030,  ()=>{
-        console.log("Live Port Now",3030)
-    })
+  socket = io(
+      app.listen(3030,  ()=>{
+         console.log("Live Port Now",3030)
+         require('./services/Socket/index')
+        })
+    )
 });
-
-
