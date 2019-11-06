@@ -39,7 +39,7 @@ MongoClient.connect(URI, {
   mongo_db = database.db();
   // Start the application after the database connection is ready
   socket = io(
-      app.listen(3030,  ()=>{
+      app.listen(process.env.PORT || 3030,  ()=>{
          console.log("Live Port Now",3030)
          require('./services/Socket/index')
         })
