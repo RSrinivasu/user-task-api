@@ -31,8 +31,22 @@ socket.on("connection" , (client)=>{
         } catch (error) {
             throw error
         }
-        
     })
+
+    client.on("typeing-status", async (body)=>{
+        try {
+            let { isTypeing , token, to } = body
+            let login = new  Login()
+            let login_user = await login.auth(token)
+            if(login_user){
+                socket.emit(`${to}-typeing-status`, isTypeing)
+            }
+        }
+        catch(error){
+
+        }
+    })
+
 
     client.on('disconnect', () => {
         console.log("socket disconnected")
