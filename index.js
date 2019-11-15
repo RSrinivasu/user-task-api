@@ -14,7 +14,7 @@ app.use(bodyparser.urlencoded({extended:false}))
 app.use(bodyparser.json())
 app.use(cors())
   
-app.use('/user-daily-task/v1/' ,routes)
+app.use('/v1/' ,routes)
 
 
 MongoClient.connect(process.env.URI, {
