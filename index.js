@@ -16,7 +16,6 @@ app.use(cors())
   
 app.use('/v1/' ,routes)
 
-
 MongoClient.connect(process.env.URI, {
                     native_parser:true,
                     useNewUrlParser: true,
